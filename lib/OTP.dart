@@ -27,7 +27,7 @@ class _otppageState extends State<otppage> {
             height: screenheight,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background.png'),
+                image: AssetImage('assets/images/background ui2.jpg'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -35,10 +35,25 @@ class _otppageState extends State<otppage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: screenheight * .15,
+                  height: screenheight * .10,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 14, right: 140),
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Container(
+                    width: 157,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/logo.png')
+                        )
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30, right: 140),
                   child: Text(
                     'Verification \nOTP Code',
                     style: TextStyle(

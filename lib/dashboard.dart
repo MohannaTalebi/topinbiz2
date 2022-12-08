@@ -10,425 +10,189 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
-  int curentTab = 0;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.white,
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Color(0xFFAF1F26),
-          onTap: (index) {
-            setState(() {
-              curentTab = index;
-            });
-          },
-          currentIndex: curentTab,
           items: [
+            BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'menu'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
             BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.list_bullet), label: 'menu'),
-            BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.home), label: 'home'),
-            BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.largecircle_fill_circle),
-                label: 'tracking'),
+                icon: Icon(Icons.spatial_tracking), label: 'tracking'),
           ],
         ),
-        body: Stack(
-          children: [
-            Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/dashboard – 1.png'),
-                    fit: BoxFit.fill),
-              ),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/dashboard – 1.png'),
+              fit: BoxFit.fill,
             ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 24.0, top: 8),
-                        child: Text.rich(
-                          TextSpan(
-                            text: 'Hi ',
-                            children: <InlineSpan>[
-                              TextSpan(
-                                text: 'Mohammad',
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 35,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24),
+                      child: Text(
+                        'Hi Mohammad',
+                        style: TextStyle(fontSize: 19),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 24),
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xFFD4D1D1),
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.black,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 24.0, top: 8),
-                        child: CircleAvatar(
-                          child: Icon(
-                            Icons.person,
-                            color: Colors.white,
-                          ),
-                          backgroundColor: Colors.grey,
-                          radius: 17,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Container(
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 45,
+                ),
+                Center(
+                  child: Container(
                     width: 338,
                     height: 86,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/images/logo.png'),
-                          fit: BoxFit.cover),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 27.0, top: 42),
-                      child: Text(
-                        'Services',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                        image: AssetImage('assets/images/logo.png'),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 17,
+                ),
+                SizedBox(
+                  height: 42,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 27),
+                  child: Text(
+                    'Services',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  SizedBox(
+                ),
+                SizedBox(
+                  height: 17,
+                ),
+                Center(
+                  child: Container(
                     width: 343,
                     height: 284,
                     child: Column(
                       children: [
                         Expanded(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.graduationCap),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.handHolding),
-                                    SizedBox(
-                                      height: 14,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.registered),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(marginright: 0,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.desktop),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
                             ],
                           ),
                         ),
                         Expanded(
                           child: Row(
                             children: [
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(CupertinoIcons.globe),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.suitcase),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.landmark),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 0,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.graduationCap),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
                             ],
                           ),
                         ),
                         Expanded(
                           child: Row(
                             children: [
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.commentDots),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.searchDollar),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 15,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.ad),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              smallbox(
-                                marginright: 0,
-                                childboxs: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(FontAwesomeIcons.microchip),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      'Legal Services',
-                                      style: TextStyle(fontSize: 8),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
+                              SizedBox(width: 15),
+                              smallbox(),
                             ],
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 53,
-                  ),
-                  Container(
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Center(
+                  child: Container(
                     width: 343,
                     height: 105,
                     child: Row(
                       children: [
-                        bigbox(
-                          childboxb: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/images/g5224.png'),
-                                  )
-                                ),
-                              ),
-                              SizedBox(
-                                height:10,
-                              ),
-                              Text('SCO'),
-                            ],
-                          ),
-                        ),
+                        bigbox(),
                         SizedBox(
                           width: 14,
                         ),
-                        bigbox(
-                          childboxb: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 79,
-                                height: 56,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/images/meeting-1019875_1280.png'),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height:6,
-                              ),
-                              Text('online meeting'),
-                            ],
-                          ),
-                        ),
+                        bigbox(),
                         SizedBox(
                           width: 14,
                         ),
-                        bigbox(
-                          childboxb: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width:79,
-                                height:56,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/images/617-6174360_consulting-illustration-hd-png-download.png'),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text('Consulting'),
-                            ],
-                          ),
-                        ),
+                        bigbox(),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  SizedBox(
+                ),
+                SizedBox(
+                  height: 53,
+                ),
+                Center(
+                  child: SizedBox(
                     width: 343,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
                         'Send Request',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFAF1F26),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                            borderRadius: BorderRadius.circular(10),
+                          )),
                     ),
                   ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                ],
-              ),
-            )
-          ],
+                ),
+                SizedBox(
+                  height: 51,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -436,53 +200,49 @@ class _homepageState extends State<homepage> {
 }
 
 class bigbox extends StatelessWidget {
-  bigbox({this.childboxb});
-
-  final Widget? childboxb;
+  const bigbox({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        child: childboxb,
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(17),
-          boxShadow: [
-            BoxShadow(
-                color: Color(0xFFAF1F26).withOpacity(0.34),
-                offset: Offset(0, 3),
-                blurRadius: 6)
-          ],
-        ),
+    return Container(
+      width: 105,
+      height: 105,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(17),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x34AF1F26),
+            offset: Offset(0, 3),
+            blurRadius: 6,
+          ),
+        ],
       ),
     );
   }
 }
 
 class smallbox extends StatelessWidget {
-  smallbox({this.childboxs, required this.marginright});
-
-  final Widget? childboxs;
-  double marginright = 15;
+  const smallbox({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: childboxs,
-      margin: EdgeInsets.only(right: marginright),
       width: 74,
       height: 74,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(17),
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
-              color: Color(0xFFAF1F26).withOpacity(0.34),
-              offset: Offset(0, 3),
-              blurRadius: 6)
+            color: Color(0x34AF1F26),
+            offset: Offset(0, 3),
+            blurRadius: 6,
+          ),
         ],
       ),
     );
